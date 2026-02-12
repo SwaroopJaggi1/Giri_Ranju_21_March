@@ -1,0 +1,234 @@
+.journey-section {
+  background: #F5F3E8;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.journey-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.journey-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.journey-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 1rem;
+}
+
+.journey-description {
+  font-size: 1.25rem;
+  color: #5A6C7D;
+  font-weight: 400;
+}
+
+.timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #2C3E50, #E88A72, #2C3E50);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.day-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  z-index: 1;
+}
+
+.day-card:nth-child(even) .day-content {
+  grid-column: 3;
+}
+
+.day-card:nth-child(odd) .day-content {
+  grid-column: 1;
+}
+
+.day-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.day-number-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.day-1 .day-number-badge {
+  background: #2C3E50;
+}
+
+.day-2 .day-number-badge {
+  background: #E88A72;
+}
+
+.day-3 .day-number-badge {
+  background: #2C3E50;
+}
+
+.day-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2C3E50;
+  margin-bottom: 0.5rem;
+}
+
+.day-subtitle {
+  font-size: 1rem;
+  color: #E88A72;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.day-route {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #5A6C7D;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.day-activities {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.activity-icon {
+  color: #E88A72;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.activity-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.activity-text {
+  font-size: 0.95rem;
+  color: #2C3E50;
+  line-height: 1.5;
+}
+
+.activity-time {
+  font-size: 0.85rem;
+  color: #8A9BA8;
+  font-weight: 500;
+}
+
+.day-stay {
+  background: #FFF9F0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #E88A72;
+  margin-bottom: 1rem;
+}
+
+.stay-label {
+  font-size: 0.95rem;
+  color: #2C3E50;
+  font-weight: 600;
+}
+
+.day-note {
+  font-size: 0.9rem;
+  color: #5A6C7D;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 968px) {
+  .timeline-line {
+    left: 30px;
+  }
+
+  .day-card {
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+  }
+
+  .day-card:nth-child(even) .day-content,
+  .day-card:nth-child(odd) .day-content {
+    grid-column: 2;
+  }
+
+  .day-number-badge {
+    position: relative;
+    left: 30px;
+    top: auto;
+    transform: none;
+    grid-column: 1;
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .journey-section {
+    padding: 4rem 1rem;
+  }
+
+  .journey-title {
+    font-size: 2rem;
+  }
+
+  .day-title {
+    font-size: 1.5rem;
+  }
+}
